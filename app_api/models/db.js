@@ -1,6 +1,7 @@
-require("./mekansema");
 var mongoose = require( 'mongoose' );
-var dbURI = 'mongodb+srv://enes:enes@mekanbul.3ile4j4.mongodb.net/?retryWrites=true&w=majority';
+var dbURI = "mongodb://localhost/mekanbul"
+require("./mekansema");
+//var dbURI = 'mongodb+srv://enes:enes@mekanbul.3ile4j4.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(dbURI);
 mongoose.connection.on("connected", function (){
     console.log(dbURI + "adresindeki veritabanına  bağlanıldı!\n");
@@ -24,4 +25,3 @@ process.on("SIGNINT", function(){
         process.exit(0);
     });
 });
-
